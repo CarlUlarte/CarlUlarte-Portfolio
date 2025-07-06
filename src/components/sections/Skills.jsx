@@ -58,11 +58,11 @@ export const Skills = () => {
         },
         {
             title: "Graphic & UI/UX Design",
-            description: "I enjoy designing clean interfaces and visuals using Photoshop and Figma, combining creativity with user-centered design."
+            description: "I enjoy graphic design using Photoshop and crafting tasteful user interfaces with Figma."
         },
         {
             title: "DevOps & Cybersecurity",
-            description: "I can write clear, engaging, and professional content, whether it’s for documentation, copywriting, or creative work."
+            description: "Familiar with DevOps practices and basic cybersecurity concepts to help build secure and reliable systems."
         }
     ];
 
