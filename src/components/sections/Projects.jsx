@@ -255,12 +255,12 @@ export const Projects = () => {
                     </div>
                     <div className="px-3 flex-1">
                       <h3
-                        className="text-[24px] leading-tight md:text-[30px] font-bold font-dmsans mb-2"
+                        className="text-[20px] leading-tight md:text-[30px] font-bold font-dmsans mb-2"
                         style={{ color: project.color }}
                       >
                         {project.title}
                       </h3>
-                      <p className="leading-relaxed font-inter text-gray-800 text-xs md:text-sm">
+                      <p className="leading-relaxed font-inter text-gray-800 text-[13px] md:text-sm">
                         {project.description}
                       </p>
                     </div>

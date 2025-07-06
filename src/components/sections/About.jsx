@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CarlGradPic from "../../assets/pictures/CarlGradPic1.jpg";
+import CarlGradPic from "../../assets/pictures/CarlGradPic.jpg";
 
 export const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
