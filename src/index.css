@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/just-sans');
+@import "tailwindcss";
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(45deg, #ddf1f8, #d3e4f4, #eef0f2, #f5e4dd, #e2e7fa, #d3e4f4, #eef0f2);
+  background-attachment: fixed;
+  background-size: 300% 300%;
+  animation: color 12s ease-in-out infinite;
+  scroll-behavior: smooth;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+@layer utilities {
+
+  .font-dmsans {
+    font-family: 'DM Sans', sans-serif;
+  }
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-justsans {
+    font-family: 'JUST Sans', sans-serif;
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .animate-blink {
+    animation: blink 0.5s step-end infinite;
+  }
+
+  @keyframes loading {
+    0% {
+      transform: translateX(-100%);
+    }
+    100%{
+      transform: translate(2550%);
+    }
+  }
+
+  @keyframes color {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+    
+  }
+
+  .animate-loading-bar {
+    animation: loading 2s ease infinite;
+  }
+}
