@@ -217,7 +217,7 @@ export const Skills = () => {
                                 <p className="mt-2 sm:mt-3 text-sm  font-inter sm:text-lg dark:text-gray-600">
                                     Things I can do outside of programming.
                                 </p>
-                                <div className="mt-8 space-y-12">
+                                <div className="mt-8 font-inter space-y-12">
                                     {ADDITIONAL_SKILLS.map((skill, index) => renderAdditionalSkill(skill, index))}
                                 </div>
                             </div>
