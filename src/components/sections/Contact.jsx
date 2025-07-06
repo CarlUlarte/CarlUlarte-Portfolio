@@ -160,7 +160,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 lg:py-[120px] min-h-screen flex items-center"
+      className="py-20 lg:py-[120px] min-h-screen mb-[10vh] flex items-center"
     >
       <div className="w-full container mx-auto">
         <div className="bg-white/80 rounded-[20px] shadow-lg p-8 md:p-12 w-full max-w-6xl mx-auto min-h-[600px]">

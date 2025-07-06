@@ -26,11 +26,8 @@ function App() {
         <Projects />
         <Contact />
         <div className="relative">
-          <p className="absolute bottom-10 w-full text-center text-zinc-400">
-            Made with ❤️ by{" "}
-            <a href="#" className="text-red-300 hover:underline">
-              @tomisloading
-            </a>
+          <p className="absolute bottom-9 w-full text-center text-[#3259a2]">
+            Made with 💚 by Carl Ularte
           </p>
         </div>
       </div>
