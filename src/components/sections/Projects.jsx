@@ -4,6 +4,7 @@ import thesis from "../../assets/pictures/ThesisM.png";
 import profile from "../../assets/pictures/profile.png";
 import portfolio from "../../assets/pictures/portfolio.png";
 import ojt from "../../assets/pictures/ojt.png";
+import { a } from "framer-motion/client";
 
 export const Projects = () => {
   const [activeSlide, setActiveSlide] = useState(2);
@@ -61,7 +62,8 @@ export const Projects = () => {
     },
     {
       id: 5,
-      title: "My Profile",
+      title: "My Profile☍",
+      link: "https://carlularte.netlify.app/",
       description: "My Profile is the first website I built as a freshman to practice web design and development. It includes my background, hobbies, posters Ive made, and facts about me.",
       image: profile,
       color: "#3C8EE5",
@@ -258,7 +260,13 @@ export const Projects = () => {
                         className="text-[20px] leading-tight md:text-[30px] font-bold font-dmsans mb-2"
                         style={{ color: project.color }}
                       >
-                        {project.title}
+                        {project.link ? (
+                        <a href={project.link} target="_blank" className="underline" >
+                          {project.title}
+                        </a>
+                      ) : (
+                        project.title
+                      )}
                       </h3>
                       <p className="leading-relaxed font-inter text-gray-800 text-[13px] md:text-sm">
                         {project.description}
