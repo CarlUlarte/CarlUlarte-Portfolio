@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import resumefile from "../../assets/files/Carl_Justin_Ularte_Resume.pdf";
+import resumefile from "../../assets/files/Ularte_Carl_Resume.pdf";
 
 // TextArea
 const ContactTextArea = ({ row, placeholder, name, defaultValue }) => {
