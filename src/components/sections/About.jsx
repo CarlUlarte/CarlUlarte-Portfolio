@@ -20,7 +20,7 @@ export const About = () => {
     >
       <div className="flex items-center justify-center w-full max-w-none md:max-w-4xl lg:max-w-6xl xl:max-w-7xl h-auto relative">
         {/* Browser Window */}
-        <div className="w-[90vw] md:w-[80%] rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl overflow-hidden">
+        <div className="h-[600px] md:h-auto w-[96vw] md:w-[80%] rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl overflow-hidden">
           {/* Browser Header */}
           <div className="grid grid-cols-[1fr] md:grid-cols-[15%,70%,15%] bg-[#335698] px-3 sm:px-4 h-8 sm:h-10">
             <div className="flex items-center justify-between md:justify-center w-full">
@@ -48,7 +48,7 @@ export const About = () => {
           </div>
 
           {/* Content Area */}
-          <div className="bg-white/75 flex flex-col md:grid md:grid-cols-[67%_33%] min-h-[500px] sm:min-h-[650px] lg:min-h-[650px]">
+          <div className="bg-white/75 flex flex-col md:grid md:grid-cols-[67%_33%] min-h-[600px]  lg:min-h-[650px]">
             {/* Picture Section */}
             <div className="order-1 md:order-2 flex items-start justify-center md:justify-start md:pr-10 md:pt-25 pt-5">
               <img
@@ -83,7 +83,7 @@ export const About = () => {
                       <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-dmsans tracking-tight font-bold text-gray-700 mr-2 sm:mr-4 mb-3 sm:mb-4 lg:mb-6">
                         My Background
                       </h2>
-                      <p className="font-inter text-xs md:text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6">
+                      <p className="text-justify font-inter text-sm md:text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6">
                         I recently earned my Computer Science degree from Batangas State University, and I’m eager to kickstart my career in tech. Whether I’m designing an interface, writing code, or learning something new, I bring curiosity and dedication to every project. With my attention to detail and taste for good and intuitive design, I aim to build digital experiences that are not only functional but also enjoyable to use. I’m excited to grow, collaborate, and contribute fresh ideas wherever I go next.
                       </p>
                     </div>
@@ -92,7 +92,7 @@ export const About = () => {
                       <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-dmsans tracking-tight font-bold text-gray-700 mr-2 sm:mr-4 mb-3 sm:mb-4 lg:mb-6">
                         Some Achievements I have
                       </h2>
-                      <p className="text-sm sm:text-base lg:text-lg font-inter text-gray-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6">
+                      <p className="text-justify text-sm sm:text-base lg:text-lg font-inter text-gray-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6">
                         I have always been an achiever throughout my academic journey, and I am proud to showcase some of the achievements and scholarships I earned.
                       </p>
                       <div className="space-y-2 sm:space-y-3 lg:space-y-4 mb-4 sm:mb-6 lg:mb-8">

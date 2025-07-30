@@ -34,10 +34,10 @@ export const Navbar = () => {
       const width = window.innerWidth;
       if (width < 640) {
         // Small phones
-        setNavWidth(Math.min(width * 0.80, 450));
-        setNavHeight(40);
+        setNavWidth(Math.min(width * 0.90, 450));
+        setNavHeight(43);
         setMinimizedHeight(8);
-        setIndicatorHeight(36);
+        setIndicatorHeight(39);
         setFontSize(13);
         setPaddingX(10);
       } else if (width < 1024) {

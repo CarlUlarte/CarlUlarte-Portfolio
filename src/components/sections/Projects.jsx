@@ -32,7 +32,7 @@ export const Projects = () => {
     {
       id: 2,
       title: "Professional Portfolio",
-      description: "My Professional Portfolio is my latest project, designed to showcase my skills and past projects. It highlights my work, tech stack, and what I’m capable of as a developer.",
+      description: "My Professional Portfolio is my latest project, designed to showcase my skills and past projects. It highlights my work, tech stack, and what I'm capable of as a developer.",
       image: portfolio,
       color: "#3259a2",
       tech1: "React",
@@ -42,7 +42,7 @@ export const Projects = () => {
       id: 3,
       title: "Verde",
       description:
-        "Verde is a gamified activity tracking app that rewards users with points for environmentally friendly actions, like using green transport or saving energy. It tracks and ranks users’ scores over daily, weekly, and overall periods, motivating people to adopt and maintain sustainable habits through friendly competition.",
+        "Verde is a gamified activity tracking app that rewards users with points for environmentally friendly actions, like using green transport or saving energy. It tracks and ranks users' scores over daily, weekly, and overall periods, motivating people to adopt and maintain sustainable habits through friendly competition.",
       image: verde,
       color: "#599c77",
       tech1: "ReactNative",
@@ -76,30 +76,36 @@ export const Projects = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
+      console.log('Window width:', width); // Debug log
+      
       if (width < 845) {
-        setSlideWidth(300);
+        setSlideWidth(350); // Changed from 300 to 350
         setSlideHeight(550);
         setGap(15);
         setMaxVisibleSlides(3);
         setImageHeight(200);
+        console.log('Mobile breakpoint: slideWidth set to 350'); // Debug log
       } else if (width < 1024) {
-        setSlideWidth(400);
+        setSlideWidth(450); // Increased from 400
         setSlideHeight(550);
         setGap(20);
-        setMaxVisibleSlides(5);
+        setMaxVisibleSlides(3); // Changed from 5 to 3 for better fit
         setImageHeight(250);
+        console.log('Tablet breakpoint: slideWidth set to 450'); // Debug log
       } else if (width < 1300) {
         setSlideWidth(500);
-        setSlideHeight(550);
+        setSlideHeight(560);
         setGap(20);
         setMaxVisibleSlides(5);
         setImageHeight(260);
+        console.log('Small desktop breakpoint: slideWidth set to 500'); // Debug log
       } else {
         setSlideWidth(600);
-        setSlideHeight(570);
+        setSlideHeight(590);
         setGap(30);
         setMaxVisibleSlides(5);
         setImageHeight(320);
+        console.log('Large desktop breakpoint: slideWidth set to 600'); // Debug log
       }
     };
 
@@ -107,6 +113,11 @@ export const Projects = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Debug effect to log slideWidth changes
+  useEffect(() => {
+    console.log('slideWidth updated to:', slideWidth);
+  }, [slideWidth]);
 
   const getSlidePosition = (index) => {
     const totalSlides = projects.length;
@@ -139,9 +150,9 @@ export const Projects = () => {
             2: `translateX(calc(65% + ${gap * 2}px)) scale(0.6)`,
           }
         : {
-            "-1": `translateX(calc(-30% - ${gap}px)) scale(0.6)`,
+            "-1": `translateX(calc(-25% - ${gap}px)) scale(0.6)`,
             0: "translateX(0) scale(0.9)",
-            1: `translateX(calc(30% + ${gap}px)) scale(0.6)`,
+            1: `translateX(calc(25% + ${gap}px)) scale(0.6)`,
           };
 
     const zIndexes = {
@@ -194,7 +205,7 @@ export const Projects = () => {
         </div>
 
         <div
-          className="relative w-full flex items-center justify-center overflow-hidden min-h-[560px] sm:min-h-[560px] md:min-h-[600px] lg:min-h-[600px]"
+          className="relative w-full flex items-center justify-center  min-h-[560px] sm:min-h-[560px] md:min-h-[600px] lg:min-h-[600px]"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
@@ -207,10 +218,20 @@ export const Projects = () => {
                 ...getSlideStyle(index),
                 width: `${slideWidth}px`,
                 height: `${slideHeight}px`,
+                minWidth: `${slideWidth}px`, 
+                maxWidth: `${slideWidth}px`,
               }}
               className="absolute transition-all duration-500 ease-in-out cursor-pointer flex items-center justify-center"
             >
-              <div className="w-full h-full bg-white rounded-[20px] shadow-lg overflow-hidden flex flex-col">
+              <div 
+                className="bg-white rounded-[20px] shadow-lg overflow-hidden flex flex-col"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  minWidth: `${slideWidth}px`,
+                  maxWidth: `${slideWidth}px`,
+                }}
+              >
                 <div className="p-4 flex-1 flex flex-col">
                   <div className="space-y-4 flex-1">
                     <div className="group overflow-hidden rounded-[15px] space-y-2">
@@ -221,10 +242,10 @@ export const Projects = () => {
                         style={{ height: `${imageHeight}px` }}
                       />
                     </div>
-                    <div className="px-2 flex flex-wrap justify-start">
+                    <div className="px-2 flex flex-wrap justify-start gap-1">
                       {project.tech1 && (
                         <p
-                          className="mx-1 px-1 rounded-[5px] text-white text-[10px] md:text-[13px]"
+                          className="px-2 py-1 rounded-[5px] text-white text-[10px] md:text-[13px] whitespace-nowrap" // Added py-1 and whitespace-nowrap
                           style={{ backgroundColor: project.color }}
                         >
                           {project.tech1}
@@ -232,7 +253,7 @@ export const Projects = () => {
                       )}
                       {project.tech2 && (
                         <p
-                          className="px-1 rounded-[5px] text-white text-[10px] md:text-[13px]"
+                          className="px-2 py-1 rounded-[5px] text-white text-[10px] md:text-[13px] whitespace-nowrap"
                           style={{ backgroundColor: project.color }}
                         >
                           {project.tech2}
@@ -240,7 +261,7 @@ export const Projects = () => {
                       )}
                       {project.tech3 && (
                         <p
-                          className="mx-1 px-1 rounded-[5px] text-white text-[10px] md:text-[13px]"
+                          className="px-2 py-1 rounded-[5px] text-white text-[10px] md:text-[13px] whitespace-nowrap"
                           style={{ backgroundColor: project.color }}
                         >
                           {project.tech3}
@@ -248,7 +269,7 @@ export const Projects = () => {
                       )}
                       {project.tech4 && (
                         <p
-                          className="px-1 rounded-[5px] text-white text-[10px] md:text-[13px]"
+                          className="px-2 py-1 rounded-[5px] text-white text-[10px] md:text-[13px] whitespace-nowrap"
                           style={{ backgroundColor: project.color }}
                         >
                           {project.tech4}
@@ -257,7 +278,7 @@ export const Projects = () => {
                     </div>
                     <div className="px-3 flex-1">
                       <h3
-                        className="text-[20px] leading-tight md:text-[30px] font-bold font-dmsans mb-2"
+                        className="text-[21px] leading-tight md:text-[28px] font-bold font-dmsans mb-2" // Slightly reduced font size for mobile
                         style={{ color: project.color }}
                       >
                         {project.link ? (
@@ -268,7 +289,7 @@ export const Projects = () => {
                         project.title
                       )}
                       </h3>
-                      <p className="leading-relaxed font-inter text-gray-800 text-[13px] md:text-sm">
+                      <p className="text-justify leading-relaxed font-inter text-gray-700 text-[14px] md:text-[16px]"> {/* Slightly smaller text for mobile */}
                         {project.description}
                       </p>
                     </div>
@@ -279,12 +300,12 @@ export const Projects = () => {
           ))}
         </div>
 
-        <div className="flex justify-center mt-3 space-x-2">
+        <div className="flex justify-center mt-10 space-x-2">
           {projects.map((_, index) => (
             <button
               key={index}
               onClick={() => setActiveSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
                 index === activeSlide
                   ? "bg-[#3259a2] scale-125"
                   : "bg-gray-300 hover:bg-gray-400"
