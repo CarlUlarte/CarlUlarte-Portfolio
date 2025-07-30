@@ -27,7 +27,7 @@ function App() {
         <Contact />
         <div className="relative">
           <p className="absolute bottom-9 w-full text-center text-[#3259a2]">
-            Made with 💚 by Carl Ularte
+            © 2025 Carl Ularte. All rights reserved.
           </p>
         </div>
       </div>
